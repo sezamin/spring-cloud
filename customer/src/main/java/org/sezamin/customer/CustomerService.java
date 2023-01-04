@@ -22,14 +22,7 @@ public class CustomerService {
         // todo: check if email not taken
         customerRepository.saveAndFlush(customer);
         // todo: check if fraudster
-        FraudCheckResponse fraudCheckResponse = restTemplate.getForObject(
-            "http://FRAUD/api/v1/fraud-check/{customerId}",
-            FraudCheckResponse.class,
-            customer.getId()
-        );
-        if(fraudCheckResponse.isFraudster()){
-            throw new IllegalStateException("fraudster");
-        }
+        this.fraudCheck(customer.getId());
         // todo: send notification
     }
 
