@@ -30,7 +30,7 @@ public class CustomerService {
 
         // todo: check if fraudster
         FraudCheckResponse fraudCheckResponse = restTemplate.getForObject(
-                "http://FRAUD/api/v1/fraud-check/{customerId}",
+                "http://FRAUD/api/fraud/check/{customerId}",
                 FraudCheckResponse.class,
                 customerId
         );

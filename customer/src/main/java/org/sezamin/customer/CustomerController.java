@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RestController
-@RequestMapping("api/v1/customers")
+@RequestMapping("/api/customer")
 @AllArgsConstructor
 public class CustomerController {
     private final CustomerService customerService;
